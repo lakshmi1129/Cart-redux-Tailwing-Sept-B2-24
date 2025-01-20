@@ -591,6 +591,9 @@
                 - useState(initial value) : used to create state in functional component, this hook will return an array of 2 arguments. First one is  the state, second argument : function to update state.  state updating function name should be start with "set"
                 - useEffect() - used to apply side effects to the functional component. we can pass side effect in its first argument as call back function, we can also pass an optional dependency argument to decide when to apply side effects in component.
                 - useRef(initial value):  is a react hook that lets you reference a value that's not needed for rendering. Initialvalue is optional in useRef hook.  it return an object with "current" key 
+                - useParams(): hook will return dynamic value of route associated with a component
+                - useSelector(state=>state.reducer-name) : used to select state from store in a component
+                - useDispatch(): used to execute an action from a component.
     13. Form handling in React:  thare are 2 ways to manages data inside the form by a component
         - Controlled components: are components which store form data inside its own state
         - Uncontrolled Components:  components who access form data using its DOM elements reference.
@@ -600,6 +603,11 @@
             1. Render the entire react app inside "BrowserRouter" component of react-router-dom library, provide this step inside main.jsx file
             2. Inorder to set up path for component, make sure each component must be inside "Routes" component of react-router-dom library, provide this step inside App.jsx file
             3. To set up path for component, use "Route" component of react-router-dom library. route component has attributes like "path" and "element"  inorder to route for component. All route components must be inside Routes component.
+        - Dynamic Routing:  we can set up a dynamic/ changing value in a url along : symbol, so react app will understand value along with the : is dynamic part of the URL.
+        - To set up page not found url use path as *, its path must be set up at the end of all url in react app.
+        
+
+
     15. Higher Order componenets(HOC): are components whose props argument will give another component,eg: Route component
     16. Axios in react: 
         -Using Axios Library : install axios -  npm install axios
@@ -659,6 +667,9 @@
             - createSlice() : used to combine action and reducre in a single file.
                 - steps to create slice for react app
                     - create js file for defining slice
+            - createAsyncThunk() : used to make asyncronous call in an action in redux. It accept 2 arguments, first is action type string('slicename/actionname'), 2 ns argument is a callback function it can return promise. It output can be 3 different types. 
+                    -pending/fullfilled/rejected. 
+                    - 'ExtraReducers' in slice can handle promise return action. because it has define different cases to update slice state, based on promise output.
         4. Hooks used in component for managing state using redux
                 - useSelector(state=>state.reducer-name) : used to select state from atore in a component
                 - useDispatch(): used to execute an action from a component. Hook will return a function that is dispatching an action in its argument when we call the function
